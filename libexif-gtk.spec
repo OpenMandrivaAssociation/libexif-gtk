@@ -17,7 +17,6 @@ Source: http://belnet.dl.sourceforge.net/sourceforge/libexif/libexif-gtk-%{versi
 
 ##### ADDITIONAL DEFINITIONS #####
 
-BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires:	libexif-devel libgtk+2.0-devel libglib2.0-devel
 
 ##### SUB-PACKAGES #####
