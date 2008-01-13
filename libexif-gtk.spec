@@ -6,7 +6,7 @@
 Summary:	Library to access EXIF files (extended JPEG files)
 Name:		libexif-gtk
 Version:	0.3.5
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	LGPL
 Group:		Graphics
 Url:		http://sourceforge.net/projects/libexif/
