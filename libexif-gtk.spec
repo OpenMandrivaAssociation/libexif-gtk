@@ -23,7 +23,6 @@ BuildRequires:	libexif-devel libgtk+2.0-devel libglib2.0-devel
 ##### SUB-PACKAGES #####
 
 %description
-
 Most digital cameras produce EXIF files, which are JPEG files with
 extra tags that contain information about the image. The EXIF library
 allows you to parse an EXIF file and read the data from those tags.
@@ -39,7 +38,6 @@ Group:		Graphics
 Conflicts:	%{_lib}exif-gtk4
 
 %description  -n %{libname}
-
 Most digital cameras produce EXIF files, which are JPEG files with
 extra tags that contain information about the image. The EXIF library
 allows you to parse an EXIF file and read the data from those tags.
