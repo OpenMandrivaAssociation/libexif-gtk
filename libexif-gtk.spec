@@ -87,10 +87,14 @@ rm -rf $RPM_BUILD_ROOT
 
 ##### PRE/POST INSTALL SCRIPTS #####
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
 %postun -n %{libname}
+%if %mdkversion < 200900
 /sbin/ldconfig
+%endif
 
 ##### CLEAN UP #####
 
