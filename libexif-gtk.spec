@@ -87,8 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 
 ##### PRE/POST INSTALL SCRIPTS #####
 
-%post -n %{libname}
-/sbin/ldconfig
+%post -n %{libname} -p /sbin/ldconfig
 
 %postun -n %{libname}
 /sbin/ldconfig
