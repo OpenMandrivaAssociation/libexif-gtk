@@ -1,5 +1,3 @@
-##### GENERAL STUFF #####
-
 %define major	5
 %define libname	%mklibname exif-gtk %{major}
 
@@ -10,17 +8,9 @@ Release:	%mkrel 10
 License:	LGPL
 Group:		Graphics
 Url:		http://sourceforge.net/projects/libexif/
-
-##### SOURCE FILES #####
-
 Source: http://belnet.dl.sourceforge.net/sourceforge/libexif/libexif-gtk-%{version}.tar.bz2
-
-##### ADDITIONAL DEFINITIONS #####
-
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires:	libexif-devel libgtk+2.0-devel libglib2.0-devel
-
-##### SUB-PACKAGES #####
 
 %description
 Most digital cameras produce EXIF files, which are JPEG files with
@@ -57,23 +47,17 @@ This package contains all files which one needs to compile programs using
 the "%{libname}" library.
 
 
-##### PREP #####
-
 %prep
 %setup -q
 
 # Disable GTK_DISABLE_DEPRECATED macro
 sed -i s/-DGTK_DISABLE_DEPRECATED// */Makefile.*
 
-##### BUILD #####
-
 %build
 # "autogen" is needed because we have a CVS snapshot.
 #./autogen.sh
 %configure2_5x
 %make
-
-##### INSTALL #####
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -85,8 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name}
 
-##### PRE/POST INSTALL SCRIPTS #####
-
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
 %endif
@@ -96,20 +78,14 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/ldconfig
 %endif
 
-##### CLEAN UP #####
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-##### FILE LISTS FOR ALL BINARY PACKAGES #####
-
-##### libexif-gtk
 %files -n %{libname} -f %{name}.lang
 %defattr(-,root,root)
 %doc COPYING ChangeLog
 %{_libdir}/*.so.*
 
-##### %{libname}-devel
 %files  -n %{libname}-devel
 %defattr(-,root,root)
 %{_libdir}/*.so
