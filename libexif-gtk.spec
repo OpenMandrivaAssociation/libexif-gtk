@@ -12,8 +12,8 @@ Url:		http://sourceforge.net/projects/libexif/
 Source: http://belnet.dl.sourceforge.net/sourceforge/libexif/libexif-gtk-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires:	libexif-devel
-BuildRequires:	libgtk+2.0-devel
-BuildRequires:	libglib2.0-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	glib2-devel
 
 %description
 Most digital cameras produce EXIF files, which are JPEG files with
