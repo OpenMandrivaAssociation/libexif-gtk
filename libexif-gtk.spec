@@ -64,7 +64,7 @@ sed -i s/-DGTK_DISABLE_DEPRECATED// */Makefile.*
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %makeinstall_std
 
@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -n %{libname} -f %{name}.lang
 %defattr(-,root,root)
