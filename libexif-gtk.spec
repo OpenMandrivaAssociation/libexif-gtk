@@ -2,6 +2,8 @@
 %define libname	%mklibname exif-gtk %{major}
 %define devname	%mklibname exif-gtk -d
 
+%define _disable_lto 1
+
 Summary:	Library to access EXIF files (extended JPEG files)
 Name:		libexif-gtk
 Version:	0.3.5
