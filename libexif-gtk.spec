@@ -6,14 +6,15 @@
 
 Summary:	Library to access EXIF files (extended JPEG files)
 Name:		libexif-gtk
-Version:	0.3.5
-Release:	27
+Version:	0.5.0
+Release:	1
 License:	LGPLv2
 Group:		Graphics
 Url:		http://sourceforge.net/projects/libexif/
-Source0:	http://belnet.dl.sourceforge.net/sourceforge/libexif/%{name}-%{version}.tar.bz2
+Source0:	http://belnet.dl.sourceforge.net/sourceforge/libexif/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libexif)
 
 %description
@@ -56,15 +57,15 @@ the "%{name}" library.
 sed -i s/-DGTK_DISABLE_DEPRECATED// */Makefile.*
 
 %build
-%configure2_5x --disable-static
-%make
+%configure --disable-static
+%make_build
 
 %install
-%makeinstall_std
-%find_lang %{name}
+%make_install
 
-%files -n %{libname} -f %{name}.lang
+%files -n %{libname}
 %{_libdir}/libexif-gtk.so.%{major}*
+%{_datadir}/locale/*/LC_MESSAGES/libexif-gtk-5.mo
 
 %files  -n %{devname}
 %doc COPYING ChangeLog
