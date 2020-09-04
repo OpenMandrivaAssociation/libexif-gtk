@@ -57,14 +57,13 @@ the "%{name}" library.
 sed -i s/-DGTK_DISABLE_DEPRECATED// */Makefile.*
 
 %build
-%configure2_5x --disable-static
-%make
+%configure --disable-static
+%make_build
 
 %install
-%makeinstall_std
-%find_lang %{name}
+%make_install
 
-%files -n %{libname} -f %{name}.lang
+%files -n %{libname}
 %{_libdir}/libexif-gtk.so.%{major}*
 
 %files  -n %{devname}
