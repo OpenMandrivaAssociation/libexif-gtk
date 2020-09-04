@@ -65,6 +65,7 @@ sed -i s/-DGTK_DISABLE_DEPRECATED// */Makefile.*
 
 %files -n %{libname}
 %{_libdir}/libexif-gtk.so.%{major}*
+%{_datadir}/locale/*/LC_MESSAGES/libexif-gtk-5.mo
 
 %files  -n %{devname}
 %doc COPYING ChangeLog
