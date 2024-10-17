@@ -10,7 +10,7 @@ Version:	0.5.0
 Release:	2
 License:	LGPLv2
 Group:		Graphics
-Url:		http://sourceforge.net/projects/libexif/
+Url:		https://sourceforge.net/projects/libexif/
 Source0:	http://belnet.dl.sourceforge.net/sourceforge/libexif/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
